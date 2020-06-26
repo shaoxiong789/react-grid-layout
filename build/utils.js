@@ -250,11 +250,13 @@ function compact(
     if (l.new) {
       compareWith.push(l);
     }
-  }); // We go through the items by row and column.
+  });
+  console.log("compareWith", compareWith); // We go through the items by row and column.
 
   var sorted = sortLayoutItems(layout, compactType); // Holding for new items.
 
   var out = Array(layout.length);
+  console.log(sorted, sorted);
 
   for (var i = 0, len = sorted.length; i < len; i++) {
     var l = cloneLayoutItem(sorted[i]); // Don't move static elements
@@ -802,7 +804,8 @@ function synchronizeLayoutWithChildren(
   /*: CompactType*/
 ) {
   /*: Layout*/
-  initialLayout = initialLayout || []; // Generate one layout item per child.
+  initialLayout = initialLayout || [];
+  console.log("initialLayout", initialLayout); // Generate one layout item per child.
 
   var layout =
     /*: LayoutItem[]*/
@@ -854,12 +857,17 @@ function synchronizeLayoutWithChildren(
         });
       }
     }
-  }); // Correct the layout.
+  });
+
+  console.log("layout", layout); // Correct the layout.
 
   var correctedLayout = correctBounds(layout, {
     cols: cols
   });
-  return compact(correctedLayout, compactType, cols);
+  console.log("correctedLayout", correctedLayout);
+  var layouts = compact(correctedLayout, compactType, cols);
+  console.log(layouts);
+  return layouts;
 }
 /**
  * Validate a layout. Throws errors.

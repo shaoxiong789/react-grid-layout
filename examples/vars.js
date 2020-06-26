@@ -139,5 +139,14 @@ module.exports = [
       "Once you drop the item within the grid you'll get its coordinates/properties and can perform actions with " +
         "it accordingly."
     ]
+  },
+  {
+    title: "my-drag-demo",
+    source: "my-drag-demo",
+    paragraphs: [
+      "This demo shows what happens when an item is added from outside of the grid.",
+      "Once you drop the item within the grid you'll get its coordinates/properties and can perform actions with " +
+        "it accordingly."
+    ]
   }
 ];
